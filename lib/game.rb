@@ -1,6 +1,6 @@
 # Constant containing all the possible win conditions inside this array in Regexp Format
 WIN_CASES = [
-  '^(?:O{6}|O{3})?XXX(?:O{6}|O{3})?$',
+  '^(?:[B\-]{6}|[B\-]{3})?AAA(?:[B\-]{6}|[B\-]{3})?$',
   '^[B\-]{0,2}(?:A[B\-]{2}){2}A[B\-]{0,2}$',
   '^[B\-]{2}A[B\-]{3}[B\-]$',
   '^(?:A[B\-]{3}){2}A$'
@@ -51,6 +51,7 @@ class Board
             end
     win = winner
     move_data = [valid, win]
+    p move_data
     move_data
   end
 
