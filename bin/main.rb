@@ -1,7 +1,15 @@
 #!/usr/bin/env ruby
 require './lib/game.rb'
 
-puts 'TicTacToe Game...'
+puts '
+ _____ _     _____          _____
+/__   (_) __/__   \__ _  __/__   \___   ___
+  / /\/ |/ __|/ /\/ _` |/ __|/ /\/ _ \ / _ \
+ / /  | | (__/ / | (_| | (__/ / | (_) |  __/
+ \/   |_|\___\/   \__,_|\___\/   \___/ \___|
+
+
+'
 print "Player #{Board.avatars[0]} - Enter you name: "
 p1 = Player.new(gets.strip, Board.avatars[0])
 
