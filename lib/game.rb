@@ -1,9 +1,9 @@
 # Constant containing all the possible win conditions inside this array in Regexp Format
 WIN_CASES = [
-  '^(?:[B\-]{6}|[B\-]{3})?AAA(?:[B\-]{6}|[B\-]{3})?$', # Win case for HORIZONTAL line (e.g. OOO XXX OOO) ‒‒
-  '^[B\-]{0,2}(?:A[B\-]{2}){2}A[B\-]{0,2}$', # Win case for VERTICAL line (e.g. OXO OXO OXO) |
-  '^[B\-]{2}A[B\-]{3}[B\-]$', # Win case for FORWARD DIAGONAL line (e.g. OOX OXO XOO)  /
-  '^(?:A[B\-]{3}){2}A$' # Win case for BACKWARD DIAGONAL line (e.g. XOO OXO OOX)  \
+  '^(?:[B\-]{6}|[B\-]{3})?AAA(?:[B\-]{6}|[B\-]{3})?$', # Win case for HORIZONTAL line (e.g. OOO XXX OOO)
+  '^[B\-]{0,2}(?:A[B\-]{2}){2}A[B\-]{0,2}$', # Win case for VERTICAL line (e.g. OXO OXO OXO)
+  '^[B\-]{2}A[B\-]{3}[B\-]$', # Win case for FORWARD DIAGONAL line (e.g. OOX OXO XOO)
+  '^(?:A[B\-]{3}){2}A$' # Win case for BACKWARD DIAGONAL line (e.g. XOO OXO OOX)
 ].freeze
 
 # Player Class which stores the player's name, avatar, and score (for future features)
