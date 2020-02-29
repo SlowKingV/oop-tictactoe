@@ -1,71 +1,64 @@
 #!/usr/bin/env ruby
-puts 'TicTacToe Game...'
-WIN_CASES = [
-  '^(?:O{6}|O{3})?XXX(?:O{6}|O{3})?$',
-  '^[B\-]{0,2}(?:A[B\-]{2}){2}A[B\-]{0,2}$',
-  '^[B\-]{2}A[B\-]{3}[B\-]$',
-  '^(?:A[B\-]{3}){2}A$'
-].freeze
-syms = %w[X O]
-name = ['Player X', 'Player O']
+require './lib/board.rb'
+require './lib/player.rb'
 
-print 'Player X - Enter you name: '
-name[0] = gets.strip
+puts '
+ _____ _     _____          _____
+/__   (_) __/__   \__ _  __/__   \___   ___
+  / /\/ |/ __|/ /\/ _` |/ __|/ /\/ _ \ / _ \
+ / /  | | (__/ / | (_| | (__/ / | (_) |  __/
+ \/   |_|\___\/   \__,_|\___\/   \___/ \___|
 
-print 'Player O - Enter your name: '
-name[1] = gets.strip
 
-board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
-winner = false
+'
+print "Player #{Board.avatars[0]} - Enter you name: "
+p1 = Player.new(gets.strip, Board.avatars[0])
 
-def winner_move(sym1, sym2, brd)
-  win = WIN_CASES.any? { |v| Regexp.new(v.gsub(/[AB]/, 'A' => sym1, 'B' => sym2)).match?(brd.join) }
-  win
-end
+print "Player #{Board.avatars[1]} - Enter your name: "
+p2 = Player.new(gets.strip, Board.avatars[1])
 
-current = 0
-i = 0
+b1 = Board.new([p1, p2])
+brd = b1.board
+move_res = [false, false]
 
-while i < 9
+while b1.round < 9
+  active = b1.active
   puts "
 ----------------------------
 
     1 2 3
-1 [ #{board[0]} #{board[1]} #{board[2]} ]
-2 [ #{board[3]} #{board[4]} #{board[5]} ]
-3 [ #{board[6]} #{board[7]} #{board[8]} ]
+1 [ #{brd[0]} #{brd[1]} #{brd[2]} ]
+2 [ #{brd[3]} #{brd[4]} #{brd[5]} ]
+3 [ #{brd[6]} #{brd[7]} #{brd[8]} ]
 
 "
-  puts "#{name[current]} - Now it's your turn"
+  puts "#{active.name} - Now it's your turn"
 
-  print "#{name[current]} - Choose a column: "
+  print "#{active.name} - Choose a column: "
   col = gets.strip.to_i - 1
-  print "#{name[current]} - Choose a row: "
+  print "#{active.name} - Choose a row: "
   row = gets.strip.to_i - 1
 
-  pos = (3 * row) + col
-  valid = (0..8).include?(pos) && (board[pos] == '-')
+  move_res = b1.move(col, row)
 
-  unless valid
+  unless move_res[0]
     puts "\nWARNING - Your movement isn't valid:\nPlease, choose again...\n\n"
     next
   end
 
-  board[pos] = syms[current]
-  winner = winner_move(syms[current], syms[current - 1], board)
-  break if winner
+  break if move_res[1]
 
-  current = current.zero? ? 1 : 0
-  i += 1
+  b1.switch_player
+  b1.next_round
 end
 
 puts "
 ----------------------------
 
     1 2 3
-1 [ #{board[0]} #{board[1]} #{board[2]} ]
-2 [ #{board[3]} #{board[4]} #{board[5]} ]
-3 [ #{board[6]} #{board[7]} #{board[8]} ]
+1 [ #{brd[0]} #{brd[1]} #{brd[2]} ]
+2 [ #{brd[3]} #{brd[4]} #{brd[5]} ]
+3 [ #{brd[6]} #{brd[7]} #{brd[8]} ]
 
 "
-puts winner ? "#{name[current]} wins! Congratulations!!!" : 'This is a Tie!'
+puts move_res[1] ? "#{b1.active.name} wins! Congratulations!!!" : 'This is a DRAW!!!'
