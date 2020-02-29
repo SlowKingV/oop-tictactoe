@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require './lib/game.rb'
+require './lib/board.rb'
+require './lib/player.rb'
 
 puts '
  _____ _     _____          _____
