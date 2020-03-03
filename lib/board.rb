@@ -18,7 +18,7 @@ class Board
 
   attr_reader :board, :round, :active
   class << self
-    attr_reader :avatars
+    attr_accessor :avatars
   end
 
   def switch_player
@@ -39,7 +39,6 @@ class Board
             end
     win = winner
     move_data = [valid, win]
-    p move_data
     move_data
   end
 
