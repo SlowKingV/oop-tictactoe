@@ -17,7 +17,21 @@ To get a local copy up and running follow these simple example steps.
 
 ## How to Play
 
+    Once you start the game you'll see the *Welcome Page*. From there you're presented with three options which are as follows:
+    1. Start New Game
+    2. Change Avatar
+    0. Exit
 
+    To select one option just input the number at the left of it.
+
+#### Start New Game
+    Once you start a new game, it will ask for the names you want to use during the game. Once you're past this, the game will start and it will show you a 3x3 matrix where you put your moves. To choose a slot you must specify the coordinates of it (Column/Row) and after your input it will be then th turn of your partner. The game ends when anybody aligns three of your avatars in a stright line or when there's no space left for further moves.
+
+#### Change Avatar
+    If you choose to change your avatars before starting the game then you'll have to input the avatar of the first player (*X* by default) and the one of the second player after it (*O* by default). Once you input both avatars you'll return to the main screen.
+
+#### Exit
+    This option will finish the game.
 
 ## Built With
 
