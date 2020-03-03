@@ -1,6 +1,8 @@
 # Object Oriented Programming (Ruby): Tic Tac Toe
 > In this project, the student builds a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
+![Screenshot](./assets/scrsht.png)
+
 Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
 ## Run the game
