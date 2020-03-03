@@ -39,7 +39,6 @@ class Board
             end
     win = winner
     move_data = [valid, win]
-    p move_data
     move_data
   end
 
