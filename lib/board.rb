@@ -18,7 +18,7 @@ class Board
 
   attr_reader :board, :round, :active
   class << self
-    attr_reader :avatars
+    attr_accessor :avatars
   end
 
   def switch_player
