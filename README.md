@@ -1,19 +1,9 @@
-# Advanced Building Blocks - Bubble Sort
-> In this project, you will implement the bubble sort algorithm.
+# Object Oriented Programming (Ruby): Tic Tac Toe
+> In this project, the student builds a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes.
 
-The bubble sort algorithm consist in comparing two entries from a given array and, in case the next entry is greater than the previous, switch their positions. This process will keep repeating until all of the values are sorted in ascending order.
+Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
-## Built With
-
-- Ruby
-- VSCode
-
-
-## Getting Started
-
-**To get a local copy of this project you can either clone or copy the contents of the file that you want.**
-**There are no dependencies and therefore each Ruby file (`.rb`) is standalone from each other**
-
+## Run the game
 
 To get a local copy up and running follow these simple example steps.
 
@@ -21,19 +11,20 @@ To get a local copy up and running follow these simple example steps.
     - You need to have ***Ruby*** installed on your machine ([Check this out](https://www.ruby-lang.org/en/documentation/installation/) for instructions on installing ruby)
 
 ### Usage
-    To run the code go to the local folder where you have the *Ruby file* and run in the terminal `$ ruby file.rb` being 'file' the one you want to run
+    To run the code go to `/bin` inside your cloned repo and run `$ main.rb` in the terminal. The main file will search automatically for your **Ruby environement** inside `/usr/bin/env`. If it can't find ruby there then you can either use ruby to load the file (`$ ruby main.rb`) or modify the first line inside `main.rb` with the path where you have Ruby installed.
 
-### Run tests
-    - On the first method (`:bubble_sort`) you can change the given array where you call the method (just after the method definition).
-    - On the second one (`:bubble_sort_by`) you can change the words inside the array (remember to separate them with spaces).
+    *Optional*: You can create a softlink to your **$PATH** so you can run the game without having to navigate to its local folder. To do this make sure you still are in `/bin/` inside the repo folder, then use the command: `$ ln -s $PWD/main.rb /usr/local/bin` to create the softlink (if the directory doesn't exist you can create it using `$ mkdir -p /usr/local/bin/`), then navigate to the link directory and rename it with anything you want like 'tictactoe' (`$ mv main.rb tictactoe`, the link doesn't needs the extension **.rb** anymore), remember that this changes apply only to the link inside `/usr/local/bin` and not the repo folder. Once you finish you can run the game whenever you want just using the link's name (e.g. `$ tictactoe`).
+
+## How to Play
 
 
-## Authors
 
-👤 **Santiago Rueda Ortiz**
+## Built With
 
-- Github: [@srueda27](https://github.com/srueda27)
-- LinkedIn: [Santiago Rueda Ortiz](https://www.linkedin.com/in/santiago-rueda-ortiz-2a3432194/)
+- Ruby
+- VSCode
+
+## Author
 
 👤 **Diego Luna Granados**
 
