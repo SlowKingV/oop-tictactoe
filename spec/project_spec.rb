@@ -1,6 +1,28 @@
 require './lib/player.rb'
 require './lib/board.rb'
 
+describe Player do
+  context 'Initialize Player Class:' do
+    it 'Should create a new instance of Player' do
+      expect(Player.new('Diego', ':D')).to(satisfy { |v| v.is_a? Player })
+    end
+
+    it 'Should assign first argument to @name' do
+      arg = 'Diego'
+      expect(Player.new(arg, ':D')).to(satisfy { |v| v.name == arg })
+    end
+
+    it 'Should assign last argument to @avatar' do
+      arg = ':D'
+      expect(Player.new('Diego', arg)).to(satisfy { |v| v.avatar == arg })
+    end
+
+    it 'Should raise an error if the number of arguments passed is different than 2' do
+      expect { Player.new }.to raise_error(ArgumentError)
+    end
+  end
+end
+
 describe Board do
   let(:player1) { Player.new('Diego', 'O') }
   let(:player2) { Player.new('Luna', 'X') }
@@ -10,6 +32,7 @@ describe Board do
     p1 = Player.new('Diego', 'O')
     p2 = Player.new('Luna', 'X')
     b1 = Board.new([p1, p2])
+
     it 'Should save both players given by the arguments' do
       expect(b1.players).to contain_exactly(p1, p2)
     end
@@ -24,6 +47,10 @@ describe Board do
 
     it 'Should set all the board slots to \'-\'' do
       expect(b1.board).to all(eq '-')
+    end
+
+    it 'Should raise an error if he number of arguments passed is different than 1' do
+      expect { Board.new }.to raise_error(ArgumentError)
     end
   end
 
