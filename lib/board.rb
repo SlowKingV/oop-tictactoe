@@ -8,7 +8,6 @@ WIN_CASES = [
 # Board Class which stores all the Game related data like board state, players, round number, the active player, etc
 class Board
   @avatars = %w[X O]
-  @players = []
   def initialize(players)
     @players = players
     @active = players[0]
@@ -16,7 +15,7 @@ class Board
     @board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
   end
 
-  attr_reader :board, :round, :active
+  attr_reader :board, :round, :active, :players
   class << self
     attr_accessor :avatars
   end

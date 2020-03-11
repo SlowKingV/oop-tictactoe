@@ -35,8 +35,8 @@ while keep
     puts 'I\'ll miss you :c'
     keep = false
   when 1
-    # rubocop:disable Metrics/BlockNesting
     # If New Game
+    # rubocop:disable Metrics/BlockNesting
     Screen.clear
 
     # Request player names
